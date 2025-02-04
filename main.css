@@ -57,3 +57,10 @@ p{
     font-size: clamp(0.9rem, 2vw, 1rem);
     color: var(--slate500);
 }
+
+@media screen and (min-width: 600px) {
+    body {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
