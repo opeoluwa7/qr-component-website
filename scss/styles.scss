@@ -11,56 +11,73 @@
     --slate900: hsl(218, 44%, 22%);
 }
 
-body {
-    background-color: var(--slate300);
+@mixin rowFlexCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin columnFlexCenter {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin outfit {
     font-family: "Outfit";
     font-style: normal;
     font-weight: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+html{
+    @include outfit;
+}
+
+body {
+    @include rowFlexCenter;
+    background-color: var(--slate300);
     min-height: 100vh;
 }
-.big-container{
+
+.big-container {
+    @include columnFlexCenter;
     width: min(90%, 20rem);
-    display: flex;
-    flex-direction: column;
     gap: 2rem;
     background-color: var(--white);
-    padding: 15px;
     border-radius: 20px;
-    padding-bottom: 30px;
+    padding: 1rem;
+    padding-bottom: 2.5rem;
 }
-.big-container > * {
-    flex: 1;
-}
-#image{
+
+#image {
     width: 100%;
     height: 100%;
-    border-radius: 12px;
+    border-radius: 0.6rem;
 }
-.body-text{
-    display: flex;
-    flex-direction: column;
+
+.body-text {
+    @include columnFlexCenter;
     gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
 }
-h1, p{
+
+h1,
+p {
     text-align: center;
 }
-h1{
+
+h1 {
     font-size: clamp(1.3rem, 2vw, 1.5rem);
     color: var(--slate900);
 }
-p{
+
+p {
     font-size: clamp(0.9rem, 2vw, 1rem);
     color: var(--slate500);
 }
 
 @media screen and (min-width: 600px) {
     body {
-        padding-top: 70px;
-        padding-bottom: 70px;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 }
