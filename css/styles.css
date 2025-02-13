@@ -29,10 +29,12 @@ body {
 .big-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: min(90%, 20rem);
   gap: 2rem;
   background-color: var(--white);
-  border-radius: 20px;
+  border-radius: 1.2rem;
   padding: 1rem;
   padding-bottom: 2.5rem;
 }
@@ -46,20 +48,19 @@ body {
 .body-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
 }
-
-h1,
-p {
+.body-text h1,
+.body-text p {
   text-align: center;
 }
-
-h1 {
+.body-text h1 {
   font-size: clamp(1.3rem, 2vw, 1.5rem);
   color: var(--slate900);
 }
-
-p {
+.body-text p {
   font-size: clamp(0.9rem, 2vw, 1rem);
   color: var(--slate500);
 }
