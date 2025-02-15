@@ -1,56 +1,42 @@
+@use '../node_modules/my-global-utilities/variables';
+@use '../node_modules/my-global-utilities/layout-mixins' as layout;
+@use '../node_modules/my-global-utilities/card/card';
+@use '../node_modules/my-global-utilities/button/button';
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap');
+
 $light-fw: 400;
 $bold-fw: 700;
+$white: hsl(0, 0%, 100%);
+$slate300: hsl(212, 45%, 89%);
+$slate500: hsl(216, 15%, 48%);
+$slate900: hsl(218, 44%, 22%);
 
+
+//MAIN STYLES
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --white: hsl(0, 0%, 100%);
-    --slate300: hsl(212, 45%, 89%);
-    --slate500: hsl(216, 15%, 48%);
-    --slate900: hsl(218, 44%, 22%);
-}
-
-@mixin rowFlexCenter {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin columnFlexCenter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin outfit {
+html {
     font-family: "Outfit";
     font-style: normal;
 }
 
-html {
-    @include outfit;
-}
-
 body {
-    @include rowFlexCenter;
-    background-color: var(--slate300);
+    @include layout.flex(row, center, center);
+    background-color: $slate300;
     min-height: 100vh;
 }
 
-.big-container {
-    @include columnFlexCenter;
+.card {
+    @include layout.flex(column, center, center);
     width: min(90%, 20rem);
     gap: 2rem;
-    background-color: var(--white);
-    border-radius: 1.2rem;
-    padding: 1rem;
-    padding-bottom: 2.5rem;
+    background-color: $white;
+    padding-bottom: 2rem;
 
     .image {
         width: 100%;
@@ -59,7 +45,7 @@ body {
     }
 
     .body-text {
-        @include columnFlexCenter;
+        @include layout.flex(column, center, center);
         gap: 1.5rem;
 
         h1,
@@ -69,13 +55,13 @@ body {
 
         h1 {
             font-size: clamp(1.3rem, 2vw, 1.5rem);
-            color: var(--slate900);
+            color: $slate900;
             font-weight: $bold-fw;
         }
 
         p {
             font-size: clamp(0.9rem, 2vw, 1rem);
-            color: var(--slate500);
+            color: $slate500;
             font-weight: $light-fw;
         }
     }
@@ -83,8 +69,7 @@ body {
 }
 
 
-
-@media screen and (min-width: 40rem) {
+@include layout.responsive(40rem) {
     body {
         padding-top: 5rem;
         padding-bottom: 5rem;

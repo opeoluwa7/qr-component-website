@@ -1,14 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap");
+.card {
+  background-color: #FFFFFF;
+  color: #284B63;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --white: hsl(0, 0%, 100%);
-  --slate300: hsl(212, 45%, 89%);
-  --slate500: hsl(216, 15%, 48%);
-  --slate900: hsl(218, 44%, 22%);
 }
 
 html {
@@ -21,50 +31,48 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: var(--slate300);
+  background-color: hsl(212, 45%, 89%);
   min-height: 100vh;
 }
 
-.big-container {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: min(90%, 20rem);
   gap: 2rem;
-  background-color: var(--white);
-  border-radius: 1.2rem;
-  padding: 1rem;
-  padding-bottom: 2.5rem;
+  background-color: hsl(0, 0%, 100%);
+  padding-bottom: 2rem;
 }
-.big-container .image {
+.card .image {
   width: 100%;
   height: auto;
   border-radius: 0.6rem;
 }
-.big-container .body-text {
+.card .body-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
 }
-.big-container .body-text h1,
-.big-container .body-text p {
+.card .body-text h1,
+.card .body-text p {
   text-align: center;
 }
-.big-container .body-text h1 {
+.card .body-text h1 {
   font-size: clamp(1.3rem, 2vw, 1.5rem);
-  color: var(--slate900);
+  color: hsl(218, 44%, 22%);
   font-weight: 700;
 }
-.big-container .body-text p {
+.card .body-text p {
   font-size: clamp(0.9rem, 2vw, 1rem);
-  color: var(--slate500);
+  color: hsl(216, 15%, 48%);
   font-weight: 400;
 }
 
-@media screen and (min-width: 600px) {
+@media (min-width: 40rem) {
   body {
     padding-top: 5rem;
     padding-bottom: 5rem;
